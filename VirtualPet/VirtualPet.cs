@@ -10,8 +10,8 @@ namespace VirtualPet
     {
         //fields == baby bears
         private string name;
-        private int hunger;
-        private int thirst;
+        private bool hunger = false;
+        private bool thirst = false;
         private int feeding;
         private int watering;
         private int orneriness;
@@ -21,16 +21,6 @@ namespace VirtualPet
         {
             get { return this.name; }
             set { this.name = value; }
-        }
-        public int Hunger
-        {
-            get { return this.hunger; }
-            set { this.hunger = value; }
-        }
-        public int Thirst
-        {
-            get { return this.thirst; }
-            set { this.thirst = value; }
         }
         public int Feeding
         {
@@ -53,22 +43,48 @@ namespace VirtualPet
         {
 
         }
-        public VirtualPet(string name, int hunger, int thirst, int feeding, int watering, int orneriness)
+        public VirtualPet(string name, bool hunger, bool thirst, int feeding, int watering, int orneriness)
         {
             this.name = name;
             this.hunger = hunger;
             this.thirst = thirst;
             this.feeding = feeding;
             this.watering = watering;
-
+            this.orneriness = orneriness;
 
         }
         //Methods()
         //at least three
         //one must be tick
+        public string Eat()
+        {
+            if (hunger)
+            {
+                hunger = true;
+                return "Hey," + this.name + " needs fed.";
+            }
+            else
+            {
+                return this.name + " is already fed. Go have a beer.";
+            }
+        }
 
+        public void Tick()
+        {
 
-
+        }
+        public string Drink()
+        {
+            if (thirst)
+            {
+                thirst = true;
+                return "Hey," + this.name + " needs water.";
+            }
+            else
+            {
+                return this.name + " is already has water. Go have a beer.";
+            }
+        }
 
 
 
