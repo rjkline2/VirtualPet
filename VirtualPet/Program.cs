@@ -30,7 +30,8 @@ namespace VirtualPet
                 Console.WriteLine("To quit, type, type 4");
 
                 userChoice = int.Parse(Console.ReadLine());
-
+                userVirtualPet.Tick();
+                
 
 
                 switch (userChoice)

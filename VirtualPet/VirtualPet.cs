@@ -36,14 +36,7 @@ namespace VirtualPet
             get { return this.watering; }
             set { this.watering = value; }
         }
-        public void AddFood(int foodAdded)
-        {
-            hunger += foodAdded;
-        }
-        public void AddWater(int waterAdded)
-        {
-            hunger += waterAdded;
-        }
+ 
 
         //Constructors
         public VirtualPet()
@@ -63,42 +56,50 @@ namespace VirtualPet
         //Methods()
         //at least three
         //one must be tick
-        public string Eat()
-        {
-            if (hunger >= 8)
-            {
-                return "Pet doesn't need fed!";
-            }
-            else if (hunger > 4)
-            {
-                return "getting hungry";
-            }
-            else
-            {
-                return "time to feed the beast!";
-            }
-        }
+        //public string Eat()
+        //{
+        //    if (hunger >= 8)
+        //    {
+        //        return "Pet doesn't need fed!";
+        //    }
+        //    else if (hunger > 4)
+        //    {
+        //        return "getting hungry";
+        //    }
+        //    else
+        //    {
+        //        return "time to feed the beast!";
+        //    }
+        //}
 
         public void Tick()
         {
-
+            hunger = hunger - 2;
+            thirst = thirst - 2;
         }
-        public string Drink()
+        //public string Drink()
+        //{
+        //    if (thirst >= 8)
+        //    {
+        //        return "Pet doesn't need water!";
+        //    }
+        //    else if (thirst > 4)
+        //    {
+        //        return "getting thirsty";
+        //    }
+        //    else
+        //    {
+        //        return "Wee beastie needs water!";
+        //    }
+        //}
+        public void AddFood(int foodAdded)
         {
-            if (thirst >= 8)
-            {
-                return "Pet doesn't need water!";
-            }
-            else if (thirst > 4)
-            {
-                return "getting thirsty";
-            }
-            else
-            {
-                return "Wee beastie needs water!";
-            }
+            hunger += foodAdded;
         }
-
+        public void AddWater(int waterAdded)
+        {
+            thirst += waterAdded;
+        }
 
 
 
