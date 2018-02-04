@@ -16,7 +16,7 @@ namespace VirtualPet
             //Ask user what action to take
             int userChoice;
 
-            VirtualPet userVirtualPet = new VirtualPet(7, 4, 0, 0);
+            VirtualPet userVirtualPet = new VirtualPet(7, 5, 0, 0);
 
             do
             {
