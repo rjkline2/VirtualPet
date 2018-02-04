@@ -38,22 +38,22 @@ namespace VirtualPet
                 {
                     case 1:
                         Console.WriteLine("Currently the lil' beast is: " + userVirtualPet.Hunger);
-                        Console.WriteLine("How much food do you want to give it? Whole numbers only, between 1-8");
+                        Console.WriteLine("How much food do you want to give it? Whole numbers only, between 1-100");
                         int foodAdded = int.Parse(Console.ReadLine());
                         userVirtualPet.AddFood(foodAdded);
                         Console.WriteLine("Here is the beast's current hunger level:" + userVirtualPet.Hunger);
                         break;
                     case 2:
                         Console.WriteLine("Currently the lil' beast's thirst level is: " + userVirtualPet.Thirst);
-                        Console.WriteLine("How much water do you want to give it? Whole numbers only, between 1-8");
+                        Console.WriteLine("How much water do you want to give it? Whole numbers only, between 1-100");
                         int waterAdded = int.Parse(Console.ReadLine());
                         userVirtualPet.AddWater(waterAdded);
                         Console.WriteLine("Here is the beast's current water level:" + userVirtualPet.Thirst);
                         break;
                     case 3:
                         Console.WriteLine("The beast is currently:");
-                        Console.WriteLine("Hunger level: " + userVirtualPet.Hunger);
-                        Console.WriteLine("Thirst level: " + userVirtualPet.Thirst);
+                        Console.WriteLine("Hunger level: " + userVirtualPet.Eat());
+                        Console.WriteLine("Thirst level: " + userVirtualPet.Drink());
                         break;
                     default:
                         break;
