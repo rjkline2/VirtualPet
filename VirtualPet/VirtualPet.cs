@@ -60,7 +60,7 @@ namespace VirtualPet
         {
             if (hunger >= 8)
             {
-                return "Pet doesn't need fed!";
+                return "Beast doesn't need fed!";
             }
             else if (hunger > 4)
             {
@@ -81,7 +81,7 @@ namespace VirtualPet
         {
             if (thirst >= 8)
             {
-                return "Pet doesn't need water!";
+                return "Beastie doesn't need water!";
             }
             else if (thirst > 4)
             {
