@@ -9,18 +9,22 @@ namespace VirtualPet
     class VirtualPet
     {
         //fields == baby bears
-        private string name;
-        private bool hunger = false;
-        private bool thirst = false;
+        private int hunger;
+        private int thirst;
         private int feeding;
         private int watering;
-        private int orneriness;
+
 
         //Properties == Mama bear get/set.......get allows us to see the value...set allows us to assign the value...pascal
-        public string Name
+        public int Hunger
         {
-            get { return this.name; }
-            set { this.name = value; }
+            get { return this.hunger; }
+            set { this.hunger = value; }
+        }
+        public int Thirst
+        {
+            get { return this.thirst; }
+            set { this.thirst = value; }
         }
         public int Feeding
         {
@@ -32,10 +36,13 @@ namespace VirtualPet
             get { return this.watering; }
             set { this.watering = value; }
         }
-        public int Orneriness
+        public void AddFood(int foodAdded)
         {
-            get { return this.orneriness; }
-            set { this.orneriness = value; }
+            hunger += foodAdded;
+        }
+        public void AddWater(int waterAdded)
+        {
+            hunger += waterAdded;
         }
 
         //Constructors
@@ -43,14 +50,14 @@ namespace VirtualPet
         {
 
         }
-        public VirtualPet(string name, bool hunger, bool thirst, int feeding, int watering, int orneriness)
+        public VirtualPet(int hunger, int thirst, int feeding, int watering)
         {
-            this.name = name;
+            
             this.hunger = hunger;
             this.thirst = thirst;
             this.feeding = feeding;
             this.watering = watering;
-            this.orneriness = orneriness;
+            
 
         }
         //Methods()
@@ -58,14 +65,17 @@ namespace VirtualPet
         //one must be tick
         public string Eat()
         {
-            if (hunger)
+            if (hunger >= 8)
             {
-                hunger = true;
-                return "Hey," + this.name + " needs fed.";
+                return "Pet doesn't need fed!";
+            }
+            else if (hunger > 4)
+            {
+                return "getting hungry";
             }
             else
             {
-                return this.name + " is already fed. Go have a beer.";
+                return "time to feed the beast!";
             }
         }
 
@@ -75,14 +85,17 @@ namespace VirtualPet
         }
         public string Drink()
         {
-            if (thirst)
+            if (thirst >= 8)
             {
-                thirst = true;
-                return "Hey," + this.name + " needs water.";
+                return "Pet doesn't need water!";
+            }
+            else if (thirst > 4)
+            {
+                return "getting thirsty";
             }
             else
             {
-                return this.name + " is already has water. Go have a beer.";
+                return "Wee beastie needs water!";
             }
         }
 
